@@ -16,11 +16,11 @@ class RedisTemplateApplicationTests {
 
     @Test
     void contextLoads() {
-        IputUserItem item = new IputUserItem();
-        item.setName("小明");
-        item.setScore(50.0);
-        redisService.AddRankItem(item);
-        System.out.println(redisService.SearchRank(item));
+//        IputUserItem item = new IputUserItem();
+//        item.setName("小明");
+//        item.setScore(50.0);
+//        redisService.AddRankItem(item);
+        System.out.println(redisService.SearchRank("小明"));
 
     }
 
