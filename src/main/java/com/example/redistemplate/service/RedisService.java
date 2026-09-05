@@ -37,12 +37,14 @@ public class RedisService {
     public ArrayList<OutPutItem> GetAllItem()
     {
         Set<String>items=redisTemplate.opsForZSet().reverseRange("RankBoard",0,-1);
+        Set<ZSetOperations.TypedTuple<String>> tupleSet=redisTemplate.opsForZSet().rangeWithScores("RankBoard",0,-1);
         long i=1L;
         ArrayList<OutPutItem>Array=new ArrayList<>();
-        for(String item:items)
+        for(ZSetOperations.TypedTuple<String> item:tupleSet)
         {
             OutPutItem outPutItem=new OutPutItem();
-            outPutItem.setName(item);
+            outPutItem.setName(item.getValue());
+            outPutItem.setScore(item.getScore());
             outPutItem.setRank(i++);
             Array.add(outPutItem);
         }
