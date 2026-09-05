@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: RedisTemplate
+
+  data:
+    redis:
+      host: 122.51.120.198
+      port: 6379
+      password: "041215"
+      database: 1
+      timeout: 3s
+
+server:
+  port: 8080
