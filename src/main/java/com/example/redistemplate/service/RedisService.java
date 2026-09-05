@@ -67,6 +67,7 @@ public class RedisService {
     }
     public Long DeleteAllItems()
     {
+//        redisTemplate.opsForHash().put();
         return redisTemplate.opsForZSet().removeRange("RankBoard",0,-1);
     }
 
