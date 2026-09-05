@@ -40,4 +40,16 @@ public class RedisBoard {
     {
         return redisService.AddRankItem(dto);
     }
+
+    @GetMapping("/remove/all")
+    Long RemoveAllItems()
+    {
+        return redisService.DeleteAllItems();
+    }
+
+    @GetMapping("/remove/{name}")
+    Long RemoveSingleItem(@PathVariable String name)
+    {
+        return redisService.DeleteSingleItem(name);
+    }
 }

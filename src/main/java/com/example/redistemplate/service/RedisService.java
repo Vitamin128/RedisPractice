@@ -65,4 +65,13 @@ public class RedisService {
         }
         return Array;
     }
+    public Long DeleteAllItems()
+    {
+        return redisTemplate.opsForZSet().removeRange("RankBoard",0,-1);
+    }
+
+    public Long DeleteSingleItem(String name)
+    {
+        return redisTemplate.opsForZSet().remove("RankBoard",name);
+    }
 }
