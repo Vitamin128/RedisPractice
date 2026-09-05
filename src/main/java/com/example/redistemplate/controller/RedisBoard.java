@@ -23,6 +23,12 @@ public class RedisBoard {
         return redisService.GetAllItem();
     }
 
+    @GetMapping("/get/all/item/{limit}")
+    ArrayList<OutPutItem> GetAllItem(@PathVariable int limit)
+    {
+        return redisService.GetAllItemLimit(limit);
+    }
+
     @GetMapping("/get/rank/{name}")
     Long GetRoleRank(@PathVariable String name)
     {
