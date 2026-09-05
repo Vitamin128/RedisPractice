@@ -23,9 +23,9 @@ public class RedisService {
         redisTemplate=RedisTemplate;
     }
 
-    public void AddRankItem(IputUserItem item)
+    public boolean AddRankItem(IputUserItem item)
     {
-        redisTemplate.opsForZSet().add("RankBoard",item.getName(),item.getScore());
+        return redisTemplate.opsForZSet().add("RankBoard",item.getName(),item.getScore());
     }
 
     public Long SearchRank(String name)

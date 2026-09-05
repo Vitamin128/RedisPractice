@@ -1,14 +1,13 @@
 package com.example.redistemplate.controller;
 
 
+import com.example.redistemplate.dao.IputUserItem;
 import com.example.redistemplate.dao.OutPutItem;
 import com.example.redistemplate.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -18,15 +17,21 @@ public class RedisBoard {
     @Autowired
     RedisService redisService;
 
-    @GetMapping("/getallitem")
+    @GetMapping("/get/all/item")
     ArrayList<OutPutItem> GetAllItem()
     {
         return redisService.GetAllItem();
     }
 
-    @GetMapping("/getrank/{name}")
+    @GetMapping("/get/rank/{name}")
     Long GetRoleRank(@PathVariable String name)
     {
         return redisService.SearchRank(name)+1;
+    }
+
+    @PostMapping("/add/item")
+    boolean AddRankItem(@Validated @RequestBody IputUserItem dto)
+    {
+        return redisService.AddRankItem(dto);
     }
 }
