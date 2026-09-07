@@ -2,6 +2,7 @@ package com.example.redistemplate;
 
 import com.example.redistemplate.dao.IputUserItem;
 import com.example.redistemplate.dao.OutPutItem;
+import com.example.redistemplate.service.RedisMap;
 import com.example.redistemplate.service.RedisService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +20,26 @@ import java.util.stream.Stream;
 class RedisTemplateApplicationTests {
 
 
-    @Autowired
-    private RedisService redisService;
-
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
-    private JsonMapper jsonMapper;
+//    @Autowired
+//    private RedisService redisService;
+//
+//    @Autowired
+//    private RedisMap redisMap;
+//
+//    @Autowired
+//    private StringRedisTemplate stringRedisTemplate;
+//
+//    @Autowired
+//    private JsonMapper jsonMapper;
 
     @Test
     void contextLoads() {
+
+//        IputUserItem iputUserItem = new IputUserItem();
+//        iputUserItem.setName("Class1");
+//        iputUserItem.setScore(20.0);
+//        redisMap.AddUserItem(iputUserItem);
+//        redisService.AddUserItem(iputUserItem);
 //        Map<Object, Object> userMap = new HashMap<>();
 //        userMap.put("name", "李四");
 //        userMap.put("age", "30");
@@ -92,6 +102,7 @@ class RedisTemplateApplicationTests {
 //                "KEY_3","103"
 //        ));
 //        System.out.println(Id);
+
 
     }
 

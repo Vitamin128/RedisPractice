@@ -3,17 +3,17 @@ package com.example.redistemplate.service;
 import com.example.redistemplate.dao.IputUserItem;
 //import com.example.redistemplate.dao.RankItem;
 import com.example.redistemplate.dao.OutPutItem;
+import com.example.redistemplate.iterface.Redis;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Set;
 
-@Service
-public class RedisService {
+@Service("RedisService")
+public class RedisService implements Redis {
 
 
     final private StringRedisTemplate redisTemplate;
